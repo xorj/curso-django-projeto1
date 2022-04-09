@@ -9,9 +9,3 @@ def home(request):
     })
 
 
-def sobre(request):
-    return HttpResponse("Sobre")
-
-
-def contato(request):
-    return HttpResponse("Contato")
