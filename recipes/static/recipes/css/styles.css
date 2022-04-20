@@ -245,6 +245,12 @@ h6 {
     transition: all .3s ease-in-out;
 }
 
-.main-footer a:hover {
-    filter: brightness(0.8);
+.main-content-detail .recipe-list-item {
+    max-width: 84rem;
+    margin: 0 auto;
+}
+
+.main-content-detail .recipe-list-item:hover {
+    transform: scale(1.0);
+    box-shadow: -8px 8px 18px rgba(0, 0, 0, .2);
 }
