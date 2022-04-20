@@ -3,27 +3,29 @@
         <img src="https://via.placeholder.com/1280x720.png/269fe6" alt="temporario">
     </div>
     <div class="recipe-title-container">
-        <h2 class="recipe-title">Lorem ipsum dolor sit amet.</h2>
+        <h2 class="recipe-title">{{ recipe.title }}</h2>
     </div>
     <div class="recipe-author">
         <span class="recipe-author-item">
             <i class="fa fa-user"></i>
-            Jorge Vinícius
+            {{recipe.author.first_name}} {{recipe.author.last_name}}
+
         </span>
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
-            12/04/2022 às 15:28
+            {{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}
+
         </span>
         <span class="recipe-author-item">
             <a href="">
                 <i class="fas fa-layer-group"></i>
-                Café da manhã
+                {{ recipe.category.name }}
             </a>
         </span>
     </div>
     <div class="recipe-content">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio natus, laboriosam quibusdam ad nemo voluptas totam delectus harum quaerat provident magnam quae dolor autem sint, asperiores repudiandae nisi. Necessitatibus, voluptatibus.
+            {{recipe.description}}
         </p>
     </div>
     <div class="recipe-meta-container">
@@ -32,7 +34,7 @@
                 <i class="fas fa-stopwatch"></i> Preparo
             </h3>
             <div class="recipe-meta-text">
-                O Minutos
+                {{recipe.preparation_time}} {{recipe.preparation_time_unit}}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
@@ -40,7 +42,7 @@
                 <i class="fas fa-pizza-slice" aria-hidden="true"></i> Porções
             </h3>
             <div class="recipe-meta-text">
-                0 Porções
+                {{recipe.servings}} {{recipe.servings_unit}}
             </div>
         </div>
     </div>
